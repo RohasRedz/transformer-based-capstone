@@ -20,13 +20,13 @@ st.markdown("Built from scratch in PyTorch with optional GPT-2 transfer learning
 mode = st.radio("Choose mode:", ["🔍 Inference", "🛠️ Train Model"])
 
 # Load tokenizer and model
-tokenizer_name = "gpt2"
+tokenizer_name = 'gpt2-large'
 tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
 tokenizer.pad_token = tokenizer.eos_token
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 block_size = 1024
-embed_dim = 768
+embed_dim = 1280
 
 @st.cache_resource
 def load_model():

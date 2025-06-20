@@ -69,7 +69,7 @@ class TransformerLM(nn.Module):
             input_ids = torch.cat([input_ids, next_token], dim=-1)
         return input_ids
 
-    def load_pretrained_embeddings(self, tokenizer_name='gpt2'):
+    def load_pretrained_embeddings(self, tokenizer_name='gpt2-large'):
         tokenizer = GPT2Tokenizer.from_pretrained(tokenizer_name)
         gpt2_model = GPT2Model.from_pretrained(tokenizer_name)
 

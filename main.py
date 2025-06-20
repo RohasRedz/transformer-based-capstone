@@ -15,9 +15,9 @@ from torch.utils.data import DataLoader
 
 # ✅ Runtime Configuration
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-tokenizer_name = 'gpt2'
+tokenizer_name = 'gpt2-large'
 block_size = 1024       # Must match GPT-2's positional embedding length
-embed_dim = 768         # Must match GPT-2 hidden size
+embed_dim = 1280         # Must match GPT-2 hidden size
 batch_size = 16
 epochs = 20
 learning_rate = 5e-5    # Small LR for transfer learning
