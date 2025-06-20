@@ -26,14 +26,14 @@ tokenizer.pad_token = tokenizer.eos_token
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 block_size = 1024
-embed_dim = 1280
+embed_dim = 1280 
 
 @st.cache_resource
 def load_model():
     model = TransformerLM(
         vocab_size=tokenizer.vocab_size,
         embed_dim=embed_dim,
-        num_heads=6,
+        num_heads=20,
         ff_hidden_dim=512,
         num_layers=4,
         block_size=block_size

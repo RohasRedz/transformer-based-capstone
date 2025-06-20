@@ -7,7 +7,8 @@ from transformers import GPT2TokenizerFast
 class WikiTextDataset(Dataset):
     def __init__(self, split='train', tokenizer_name='gpt2-large', block_size=128):
         # Load the dataset split (train/validation/test)
-        raw_dataset = load_dataset("openwebtext", split=split, trust_remote_code=True)
+        raw_dataset = load_dataset("wikitext", "wikitext-2-raw-v1", split=split)
+        #raw_dataset = load_dataset("bookcorpus", split="train", trust_remote_code=True)
 
         # Load tokenizer (you can later switch to a custom one)
         self.tokenizer = GPT2TokenizerFast.from_pretrained(tokenizer_name)
